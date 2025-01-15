@@ -1,16 +1,17 @@
 import React from "react";
+import styles from "../styles/MenuBarComponent.module.scss";
 
 const MenuBarComponent: React.FC = () => {
-    const menu_list = ['홈', '날씨', '주기'];
+    const menu_list = ['홈', '날씨'];
 
     const renderMenuList = () => {
         return menu_list.map((item, index) => (
-            <div key={index}>{item}</div>
+            <div className={styles.MenuBarItem} key={index}>{item}</div>
         ))
     };
 
     return (
-        <div>
+        <div className={styles.MenuBar}>
             {renderMenuList()}
         </div>
     );

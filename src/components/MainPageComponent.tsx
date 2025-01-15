@@ -2,6 +2,7 @@ import React from "react";
 import MenuBarComponent from "./MenuBarComponents";
 import ContentAreasComponent from "./ContentAreasComponent";
 import StatusBarComponent from "./StatusBarComponent";
+import NavigatorComponent from "./NavigatorComponent";
 
 const MainPageComponent: React.FC = () => {
     return (
@@ -9,6 +10,7 @@ const MainPageComponent: React.FC = () => {
             <MenuBarComponent />
             <ContentAreasComponent />
             <StatusBarComponent />
+            <NavigatorComponent />
         </div>
     );
 };
