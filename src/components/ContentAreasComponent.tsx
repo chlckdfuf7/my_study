@@ -3,8 +3,9 @@ import styles from "../styles/ContentAreasComponent.module.scss";
 import useStore from "../hooks/useStore";
 import HomePageComponent from "./HomePageComponent";
 import WeatherSearchComponent from "./WeatherSearchComponent";
+import { observer } from "mobx-react-lite";
 
-const ContentAreasComponent: React.FC = () => {
+const ContentAreasComponent: React.FC = observer(() => {
     const { informationStore } = useStore();
     const curPageNum = informationStore.getPage();
 
@@ -26,6 +27,6 @@ const ContentAreasComponent: React.FC = () => {
             { renderPage() }
         </div>
     );
-}
+});
 
 export default ContentAreasComponent;
