@@ -1,4 +1,4 @@
-import { makeObservable, observable } from "mobx";
+import { action, makeObservable, observable } from "mobx";
 import { boundMethod } from 'autobind-decorator';
 
 // 프로젝트에서 전역으로 관리할 변수들을 저장하는 store
