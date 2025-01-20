@@ -9,11 +9,15 @@ class InformationStore {
     
     @observable
     private city: string | undefined;
+
+    @observable
+    private favorites: string[];
     
     public constructor() {
         makeObservable(this);
         this.city = undefined;
         this.page = 0;
+        this.favorites = [];
     }
 
     @boundMethod
@@ -34,6 +38,24 @@ class InformationStore {
     @boundMethod
     public setCity(name: string) {
         this.city = name;
+    }
+
+    @boundMethod
+    public getFavorites(): string[] {
+        return this.favorites;
+    }
+
+    @boundMethod
+    public addFavorites(item: string): void {
+        this.favorites.push(item);
+    }
+
+    @boundMethod
+    public deleteFavorite(item: string): void {
+        const index = this.favorites.indexOf(item);
+        if (index !== -1) {
+            this.favorites.splice(index, 1);
+        }
     }
 }
 

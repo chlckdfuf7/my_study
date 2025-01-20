@@ -1,0 +1,11 @@
+.dialog {
+    height: 500px;
+    width: 500px;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 30%;
+    left: 50%;
+    background-color: lightgray;
+    border: 1px solid black;
+}

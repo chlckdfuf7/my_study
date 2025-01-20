@@ -1,0 +1,38 @@
+$listbox-border-color: #000000;
+$listbox-border-radius: 4px;
+$listbox-padding: 5px;
+$listbox-bg-hover: #f0f0f0;
+$listbox-item-border-color: #eee;
+$listbox-selected-bg: #046ee0;
+$listbox-selected-color: white;
+$listbox-focused-border: 1px dashed #007bff;
+
+.listbox {
+  border: 1px solid $listbox-border-color;
+  overflow-y: auto;
+  border-radius: $listbox-border-radius;
+  padding: $listbox-padding;
+  list-style-type: none;
+  outline: none;
+  margin: 0;
+
+  .listbox_item {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border-bottom: 1px solid $listbox-item-border-color;
+
+    &:hover {
+      background-color: $listbox-bg-hover;
+    }
+
+    &.selected {
+      background-color: $listbox-selected-bg;
+      color: $listbox-selected-color;
+    }
+
+    &.focused {
+      border: $listbox-focused-border;
+    }
+  }
+}
