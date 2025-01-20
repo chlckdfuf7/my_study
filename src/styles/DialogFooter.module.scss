@@ -1,0 +1,22 @@
+.footer {
+    border-top: 1px solid lightgray;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: auto;
+    gap: 10px;
+    border-top: 1px solid black;
+    background-color: lightgreen;
+}
+
+.footer:has(button:nth-child(3)) {
+    justify-content: space-between; /* 3개 - 왼쪽, 가운데, 오른쪽 */
+}
+  
+.footer:has(button:nth-child(2)):not(:has(button:nth-child(3))) {
+    justify-content: space-between; /* 2개 - 왼쪽, 오른쪽 */
+}
+
+.footer:has(button:nth-child(1)):not(:has(button:nth-child(2))) {
+    justify-content: flex-end; /* 1개 - 오른쪽 배치 */
+}

@@ -1,20 +1,29 @@
 import React, { useState } from "react";
 import styles from "../styles/NavigatorComponent.module.scss";
+import FavoritesComponent from "./FavoritesComponent";
+import AddFavoriteComponent from "./AddFavoriteComponent";
+import NavigatorBarComponent from "./NavigatorBarComponent";
 
-const NavigatorComponent = () => {
+const NavigatorComponent: React.FC = () => {
     const [position, setPosition] = useState({ x: 90, y: 100});
     const [isDragging, setIsDragging] = useState(false);
-    
+    const [offset, setOffset] = useState({ x: 0, y: 0});
+
+
     const handleMouseDown = (e: React.MouseEvent) => {
         setIsDragging(true);
+        setOffset({
+            x: e.clientX - position.x,
+            y: e.clientY - position.y
+        });
         document.body.style.userSelect = "none";
     };
 
     const handleMouseMove = (e: React.MouseEvent) => {
         if (!isDragging)    return;
         setPosition({
-            x: e.clientX - 50,
-            y: e.clientY - 50
+            x: e.clientX - offset.x,
+            y: e.clientY - offset.y
         })
     };
 
@@ -30,12 +39,13 @@ const NavigatorComponent = () => {
                 left: `${position.x}px`,
                 top: `${position.y}px`
             }}
-            onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
             onMouseLeave={handleMouseUp}
         >
-            navigator
+            <NavigatorBarComponent onMouseDown = {handleMouseDown} isDragging = {isDragging} />
+            <FavoritesComponent />
+            <AddFavoriteComponent />
         </div>
     );
 }
