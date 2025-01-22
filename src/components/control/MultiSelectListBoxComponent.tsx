@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../../styles/MultiListBoxComponent.module.scss";
 import classNames from "classnames";
 
@@ -17,8 +17,11 @@ const MultiSelectListBoxComponent: React.FC<ListBoxProps> = ({ items, width, max
         setSelectedIndexes((prev) => 
             prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
         );
+    };
+
+    useEffect(() => {
         onSelect(selectedIndexes.map((i) => items[i]));
-    }
+    }, [selectedIndexes, onSelect]);
 
     const handleKeyDown = (e: React.KeyboardEvent<HTMLUListElement>) => {
         if (e.key === 'ArrowDown') {

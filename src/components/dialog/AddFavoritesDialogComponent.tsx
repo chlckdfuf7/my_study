@@ -8,32 +8,38 @@ import styles from "../../styles/AddFavoriteDialogComponent.module.scss";
 const AddFavoriteDialogComponent: React.FC<{ onClose: () => void }> = ({ onClose }) => {
     const { informationStore } = useStore();
     const favorites = informationStore.getFavorites();
+    const wholeMenu = informationStore.getWholeMenus();
     const [addItems, setAddItems] = useState<string[]>([]);
-    const [selectAddItem, setSelectAddItem] = useState<number>(-1);
-    const [selectDeleteItem, setSelectDeleteItem] = useState<number>(-1);
-    const tmp = ['홈', '날씨', '주식'];
+    const [deleteItems, setDeleteItems] = useState<string[]>([]);
     const contents = useMemo(() => {
         return (
             <>
                 <div className={styles.listContainer}>
                     <div>
                         <div>전체 메뉴</div>
-                        <MultiSelectListBoxComponent items={tmp} width={150} maxHeight={200} onSelect={setAddItems} />
+                        <MultiSelectListBoxComponent items={wholeMenu} width={150} maxHeight={200} onSelect={setAddItems} />
                     </div>
                     <div>
                         <div>현재 목록</div>
-                        <MultiSelectListBoxComponent items={tmp} width={150} maxHeight={200} onSelect={setAddItems} />
+                        <MultiSelectListBoxComponent items={favorites} width={150} maxHeight={200} onSelect={setDeleteItems} />
                     </div>
                 </div>
             </>
         );
-    }, [tmp]);
+    }, [favorites]);
 
     const addFavorite = () => {
-        console.log("추가하기");
+        addItems.forEach(item => {
+            if (!favorites.includes(item)) {
+                informationStore.addFavorites(item);
+            }
+        });
+        setAddItems([]);
     };
 
     const removeFavorite = () => {
+        informationStore.deleteFavorites(deleteItems);
+        setDeleteItems([]);
         console.log("제거하기");
     };
     

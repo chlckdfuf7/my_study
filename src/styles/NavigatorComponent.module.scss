@@ -1,7 +1,7 @@
 .navi {
     position: fixed;
     width: 100px;
-    height: 100px;
+    min-height: 100px;
     border: 1px solid yellow;
 
     &.dragging {
@@ -24,4 +24,20 @@
     left: 0;
     right: 0;
     background-color: grey;
+}
+
+.icon_container {
+    display: flex;
+    flex-wrap: wrap; // 줄 바꿈 허용
+    column-gap: 15px; // 아이콘 간격 조정
+    justify-content: flex-start;
+    max-width: 300px; // 적절한 최대 너비 설정
+    margin: 5px;
+    min-height: 100px;
+  
+    .icon {
+      width: calc(33.33% - 10px);  // 3개씩 배치 (간격을 고려해 조정)
+      //aspect-ratio: 1/1; // 정사각형 유지
+      //object-fit: contain; // 이미지 크기 조절
+    }
 }

@@ -2,7 +2,7 @@ import React from "react";
 
 export interface ImageButtonProps {
     imageUrl: string;
-    onClick: () => void;
+    onClick(val?: any): void;
     altText?: string;
     width?: number;
     height?: number;
@@ -13,7 +13,7 @@ const ImageButtonComponent: React.FC<ImageButtonProps> = (props: ImageButtonProp
         <img 
             src={props.imageUrl}
             alt={props.altText}
-            onClick={props.onClick}
+            onClick={()=>props.onClick(props.altText)}
             style={{ width: `${props.width}px`, height: `${props.height}px`, cursor: 'pointer'}}
         />
     );
