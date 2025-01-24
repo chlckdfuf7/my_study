@@ -1,0 +1,462 @@
+[
+    {
+        "postId": 1,
+        "author": "A",
+        "title": "IVE1",
+        "img": "ive1.jpg",
+        "hearts": 5,
+        "contents": "아이브입니다",
+        "bookmark": false,
+        "reply": [
+            {
+                "author": "B",
+                "content": "우와"
+            },
+            {
+                "author": "C",
+                "content": "우와2"
+            },
+            {
+                "author": "D",
+                "content": "우와3"
+            }
+        ]
+    },
+    {
+        "postId": 2,
+        "author": "A",
+        "title": "IVE2",
+        "img": "ive2.png",
+        "hearts": 7,
+        "contents": "아이브네요",
+        "bookmark": false,
+        "reply": [
+            {
+                "author": "C",
+                "content": "이야"
+            },
+            {
+                "author": "B",
+                "content": "오오"
+            },
+            {
+                "author": "D",
+                "content": "이열"
+            }
+        ]
+    },
+    {
+        "postId": 3,
+        "author": "A",
+        "title": "안유진1",
+        "img": "yujin1.jpg",
+        "hearts": 53,
+        "contents": "안유진입니다",
+        "bookmark": false,
+        "reply": [
+            {
+                "author": "D",
+                "content": "짱"
+            },
+            {
+                "author": "B",
+                "content": "굿"
+            },
+            {
+                "author": "C",
+                "content": "와"
+            }
+        ]
+    },
+    {
+        "postId": 4,
+        "author": "A",
+        "title": "유진이",
+        "img": "yujin2.jpg",
+        "hearts": 61,
+        "contents": "유진이입니다",
+        "bookmark": false,
+        "reply": [
+            {
+                "author": "B",
+                "content": "우와"
+            },
+            {
+                "author": "C",
+                "content": "우와2"
+            },
+            {
+                "author": "D",
+                "content": "우와3"
+            }
+        ]
+    },
+    {
+        "postId": 5,
+        "author": "A",
+        "title": "장원영",
+        "img": "wonyoung.jpg",
+        "hearts": 8,
+        "contents": "장원영입니다",
+        "bookmark": false,
+        "reply": [
+            {
+                "author": "B",
+                "content": "우와"
+            },
+            {
+                "author": "C",
+                "content": "우와2"
+            },
+            {
+                "author": "D",
+                "content": "우와3"
+            }
+        ]
+    },
+    {
+        "postId": 6,
+        "author": "B",
+        "title": "리트리버",
+        "img": "dog1.png",
+        "hearts": 32,
+        "contents": "리트리버에요",
+        "bookmark": false,
+        "reply": [
+            {
+                "author": "A",
+                "content": "귀엽"
+            },
+            {
+                "author": "C",
+                "content": "우와"
+            },
+            {
+                "author": "D",
+                "content": "크다"
+            }
+        ]
+    },
+    {
+        "postId": 7,
+        "author": "B",
+        "title": "사모예드에요",
+        "img": "dog2.jpg",
+        "hearts": 47,
+        "contents": "솜뭉치네요",
+        "bookmark": false,
+        "reply": [
+            {
+                "author": "C",
+                "content": "털..."
+            },
+            {
+                "author": "A",
+                "content": "부럽다"
+            },
+            {
+                "author": "D",
+                "content": "크다..."
+            }
+        ]
+    },
+    {
+        "postId": 8,
+        "author": "B",
+        "title": "말티즈에요",
+        "img": "dog3.jpg",
+        "hearts": 49,
+        "contents": "말티즈입니다.",
+        "bookmark": false,
+        "reply": [
+            {
+                "author": "D",
+                "content": "짱"
+            },
+            {
+                "author": "A",
+                "content": "굿"
+            },
+            {
+                "author": "C",
+                "content": "와"
+            }
+        ]
+    },
+    {
+        "postId": 9,
+        "author": "B",
+        "title": "비글입니다.",
+        "img": "dog4.jpg",
+        "hearts": 22,
+        "contents": "비글이요",
+        "bookmark": false,
+        "reply": [
+            {
+                "author": "A",
+                "content": "역시"
+            },
+            {
+                "author": "C",
+                "content": "이런"
+            },
+            {
+                "author": "D",
+                "content": "헐"
+            }
+        ]
+    },
+    {
+        "postId": 10,
+        "author": "B",
+        "title": "말라뮤트입니다",
+        "img": "dog5.jpg",
+        "hearts": 31,
+        "contents": "말라뮤트입니다",
+        "bookmark": false,
+        "reply": [
+            {
+                "author": "A",
+                "content": "우와"
+            },
+            {
+                "author": "C",
+                "content": "허스키?"
+            },
+            {
+                "author": "D",
+                "content": "우와"
+            }
+        ]
+    },
+    {
+        "postId": 11,
+        "author": "C",
+        "title": "고양이1",
+        "img": "cat1.jpg",
+        "hearts": 25,
+        "contents": "고양이1이에요",
+        "bookmark": false,
+        "reply": [
+            {
+                "author": "B",
+                "content": "우와"
+            },
+            {
+                "author": "A",
+                "content": "우와2"
+            },
+            {
+                "author": "D",
+                "content": "우와3"
+            }
+        ]
+    },
+    {
+        "postId": 12,
+        "author": "C",
+        "title": "고양이2",
+        "img": "cat2.jpg",
+        "hearts": 9,
+        "contents": "고양이2에요",
+        "bookmark": false,
+        "reply": [
+            {
+                "author": "A",
+                "content": "이야"
+            },
+            {
+                "author": "B",
+                "content": "오오"
+            },
+            {
+                "author": "D",
+                "content": "이열"
+            }
+        ]
+    },
+    {
+        "postId": 13,
+        "author": "C",
+        "title": "고양이3",
+        "img": "cat3.jpg",
+        "hearts": 13,
+        "contents": "고양이3입니다",
+        "bookmark": false,
+        "reply": [
+            {
+                "author": "D",
+                "content": "짱"
+            },
+            {
+                "author": "B",
+                "content": "굿"
+            },
+            {
+                "author": "A",
+                "content": "와"
+            }
+        ]
+    },
+    {
+        "postId": 14,
+        "author": "C",
+        "title": "고양이4",
+        "img": "cat4.jpg",
+        "hearts": 6,
+        "contents": "고양이4입니다",
+        "bookmark": false,
+        "reply": [
+            {
+                "author": "B",
+                "content": "우와"
+            },
+            {
+                "author": "A",
+                "content": "우와2"
+            },
+            {
+                "author": "D",
+                "content": "우와3"
+            }
+        ]
+    },
+    {
+        "postId": 15,
+        "author": "C",
+        "title": "고양이5",
+        "img": "cat5.png",
+        "hearts": 8,
+        "contents": "고양이5입니다",
+        "bookmark": false,
+        "reply": [
+            {
+                "author": "B",
+                "content": "우와"
+            },
+            {
+                "author": "A",
+                "content": "우와2"
+            },
+            {
+                "author": "D",
+                "content": "우와3"
+            }
+        ]
+    },
+    {
+        "postId": 16,
+        "author": "D",
+        "title": "김치찌개",
+        "img": "kimchi.jpg",
+        "hearts": 37,
+        "contents": "김치찌개에요",
+        "bookmark": false,
+        "reply": [
+            {
+                "author": "A",
+                "content": "귀엽"
+            },
+            {
+                "author": "C",
+                "content": "우와"
+            },
+            {
+                "author": "B",
+                "content": "크다"
+            }
+        ]
+    },
+    {
+        "postId": 17,
+        "author": "D",
+        "title": "된장찌개",
+        "img": "food2.jpg",
+        "hearts": 47,
+        "contents": "된장찌개입니다",
+        "bookmark": false,
+        "reply": [
+            {
+                "author": "C",
+                "content": "털..."
+            },
+            {
+                "author": "A",
+                "content": "부럽다"
+            },
+            {
+                "author": "B",
+                "content": "크다..."
+            }
+        ]
+    },
+    {
+        "postId": 18,
+        "author": "D",
+        "title": "삽겹살",
+        "img": "food3.jpg",
+        "hearts": 75,
+        "contents": "삼겹살파티.",
+        "bookmark": false,
+        "reply": [
+            {
+                "author": "B",
+                "content": "짱"
+            },
+            {
+                "author": "A",
+                "content": "굿"
+            },
+            {
+                "author": "C",
+                "content": "와"
+            }
+        ]
+    },
+    {
+        "postId": 19,
+        "author": "D",
+        "title": "토마호크.",
+        "img": "food4.jpg",
+        "hearts": 79,
+        "contents": "토마호크요",
+        "bookmark": false,
+        "reply": [
+            {
+                "author": "A",
+                "content": "역시"
+            },
+            {
+                "author": "C",
+                "content": "이런"
+            },
+            {
+                "author": "B",
+                "content": "헐"
+            }
+        ]
+    },
+    {
+        "postId": 20,
+        "author": "D",
+        "title": "우대갈비",
+        "img": "food5.jpg",
+        "hearts": 34,
+        "contents": "우대갈비입니다",
+        "bookmark": false,
+        "reply": [
+            {
+                "author": "A",
+                "content": "우와"
+            },
+            {
+                "author": "C",
+                "content": "허스키?"
+            },
+            {
+                "author": "B",
+                "content": "우와"
+            }
+        ]
+    }
+]

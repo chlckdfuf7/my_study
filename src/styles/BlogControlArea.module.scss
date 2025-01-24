@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    align-items: center;  // 요소들을 수직 중앙 정렬
+    justify-content: space-between;  // 왼쪽 그룹과 오른쪽 버튼을 양끝 정렬
+    padding: 10px 20px;  // 좌우 여백 설정
+
+    .select_group {
+        display: flex;
+        gap: 20px;  // select 요소들 사이 간격 조정
+    }
+
+    .write_button {
+        margin-left: auto;  // 버튼을 오른쪽 끝으로 배치
+    }
+    
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: flex-start;
+
+        .write_button {
+            margin-left: 0;
+            margin-top: 10px;
+        }
+    }
+}

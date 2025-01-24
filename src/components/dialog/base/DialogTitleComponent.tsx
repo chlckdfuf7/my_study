@@ -14,7 +14,7 @@ const DialogTitle = ({
     className
 }: DialogTitleProps): React.JSX.Element => {
     const { handleClose } = useDialogContext();
-    const imageUrl = '../../resources/cancel.png';
+    const imageUrl = '/resources/cancel.png';
     return (
         <div className={classNames(styles.title, className)}>
             {title}
