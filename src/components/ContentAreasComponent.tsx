@@ -4,6 +4,7 @@ import useStore from "../hooks/useStore";
 import HomePageComponent from "./HomePageComponent";
 import WeatherSearchComponent from "./WeatherSearchComponent";
 import { observer } from "mobx-react-lite";
+import BlogMainPageComponent from "./blog/BlogMainPageComponent";
 
 const ContentAreasComponent: React.FC = observer(() => {
     const { informationStore } = useStore();
@@ -17,6 +18,12 @@ const ContentAreasComponent: React.FC = observer(() => {
             case 1: {
                 return (<WeatherSearchComponent />);
             }
+            case 5: {
+                return (<BlogMainPageComponent />);
+            }
+            case 2:
+            case 3:
+            case 4:
             default:
                 break;
         }

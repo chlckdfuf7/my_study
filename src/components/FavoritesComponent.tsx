@@ -20,27 +20,27 @@ const FavoritesComponent: React.FC = () => {
         const imageInfo = {imageUrl: '', altText: name};
         switch (name) {
             case '날씨': {
-                imageInfo.imageUrl = '../../resources/weather.png';
+                imageInfo.imageUrl = '/resources/weather.png';
                 break;
             }
             case '홈': {
-                imageInfo.imageUrl = '../../resources/home.png';
+                imageInfo.imageUrl = '/resources/home.png';
                 break;
             }
             case '주가': {
-                imageInfo.imageUrl = '../../resources/stock.png';
+                imageInfo.imageUrl = '/resources/stock.png';
                 break;
             }
             case '게임': {
-                imageInfo.imageUrl = '../../resources/game.png';
+                imageInfo.imageUrl = '/resources/game.png';
                 break;
             }
             case '쇼핑': {
-                imageInfo.imageUrl = '../../resources/shopping.png';
+                imageInfo.imageUrl = '/resources/shopping.png';
                 break;
             }
             case '블로그': {
-                imageInfo.imageUrl = '../../resources/blog.png';
+                imageInfo.imageUrl = '/resources/blog.png';
                 break;
             }
             default:

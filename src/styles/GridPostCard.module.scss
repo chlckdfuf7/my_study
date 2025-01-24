@@ -1,0 +1,118 @@
+.postCard {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 260px;
+    height: 250px;
+    padding: 20px;
+    background-color: lightgray;
+    margin-bottom: 20px;
+    
+    &__imgBox {
+        width: auto;
+        height: 170px;
+        margin-bottom: 20px;
+
+        &__img {
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+        }
+    }
+
+    &__author {
+        width: auto;
+        height: auto;
+        background-color: lightyellow;
+        margin-bottom: 10px;
+    }
+
+    &__title {
+        width: auto;
+        height: auto;
+        background-color: lightgreen;
+    }
+
+    &__contents {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 15px;
+        box-shadow: 0px -2px 10px rgba(0, 0, 0 , 0.1);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(100%);
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    &__contents--show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    &__contentsArea {
+        display: flex;
+        flex-direction: column;
+
+        &__close {
+            align-self: flex-end;
+        }
+
+        &__contents {
+            align-self: flex-start;
+        }
+    }
+
+    &__replyContents {
+        position: absolute;
+        top: 0;
+        width: 250px;
+        min-height: 250px;
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0 , 0.1);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    &__replyContents--show {
+        z-index: 10;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &__replyContents--right {
+        transform: translateX(0);
+        left: 100%;
+    }
+
+    &__replyContents--left {
+        transform: translateX(0);
+        right:100%
+    }
+
+    &__replyBox {
+        position: relative;
+
+        &__list {
+            height: 210px;
+            overflow-y: auto;
+            border: 1px solid black;
+            margin-bottom: 15px;
+        }
+
+        &__input {
+            width: 215px;
+            margin-right: 10px;
+        }
+        &__close {
+            position: absolute;
+            top: -20px;
+            left: 101%;
+        }
+    }
+}
