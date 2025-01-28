@@ -19,6 +19,7 @@ export interface BlogState {
     display: string;
     sortType: string;
     data: BlogPost[];
+    newPost: boolean;
 }
 
 // 액션 타입
@@ -26,4 +27,5 @@ export type BlogAction =
     | { type: "SET_FILTER"; payload: string }
     | { type: "SET_DISPLAY"; payload: string }
     | { type: "SET_SORT_TYPE"; payload: string }
-    | { type: "SET_DATA"; payload: BlogPost[] };
+    | { type: "SET_DATA"; payload: BlogPost[] }
+    | { type: "SET_NEW_POST"; payload: boolean };

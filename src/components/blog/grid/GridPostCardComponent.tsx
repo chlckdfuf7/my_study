@@ -73,7 +73,7 @@ const GridPostCardComponent: React.FC<Props> = (props) => {
     return (
         <div className={styles.postCard} ref={cardRef}>
             <div className={styles["postCard__imgBox"]}>
-                <img className={styles["postCard__imgBox__img"]} src={`/resources/${blogPost.img}`} alt={`${blogPost.img}`} />
+                <img className={styles["postCard__imgBox__img"]} src={`http://localhost:5000/resources/blogPost/${blogPost.img}`} alt={`${blogPost.img}`} />
             </div>
             <div className={styles["postCard__author"]}>{blogPost.author}</div>
             <div className={styles["postCard__title"]}>{blogPost.title}</div>

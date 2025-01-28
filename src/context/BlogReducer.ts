@@ -1,11 +1,11 @@
 import { BlogState, BlogAction, BlogPost } from "./BlogTypes";
-import data from "../tempData/postData.json";
 
 export const initialState: BlogState = {
     filter: "전체 게시글",
     display: "격자식",
     sortType: "최신순",
-    data: data as BlogPost[],
+    data: [],
+    newPost: false,
 };
 
 export const blogReducer = (state: BlogState, action: BlogAction): BlogState => {
@@ -18,6 +18,8 @@ export const blogReducer = (state: BlogState, action: BlogAction): BlogState => 
             return { ...state, sortType: action.payload };
         case "SET_DATA":
             return { ...state, data: action.payload };
+        case "SET_NEW_POST":
+            return { ...state, newPost: action.payload};
         default:
             return state;
     }

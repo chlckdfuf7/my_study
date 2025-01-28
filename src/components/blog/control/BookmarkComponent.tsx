@@ -9,7 +9,7 @@ export interface Props {
 
 const BookmarkComponent: React.FC<Props> = (props) => {
     const { isSelected, handleBookmarkChange } = props;
-    const imgUrl = isSelected ? '/resources/selectedbookmark.png' : '/resources/bookmark.png';
+    const imgUrl = isSelected ? '/selectedbookmark.png' : '/resources/bookmark.png';
 
     return (
         <div className={styles.bookmark}>

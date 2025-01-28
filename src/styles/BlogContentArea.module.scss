@@ -28,4 +28,9 @@
     &--normal {
         display: flex;
     }
+
+    &--newPost {
+        border: 1px solid;
+        padding: 5px;
+    }
 }
