@@ -1,0 +1,13 @@
+.newPostContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.newPostContainer input,
+.newPostContainer button {
+    margin: 10px 0;
+}

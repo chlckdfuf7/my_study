@@ -20,3 +20,8 @@ export const setData = (data: BlogPost[]): BlogAction => ({
     type: "SET_DATA",
     payload: data,
 });
+
+export const setNewPost = (isNew: boolean): BlogAction => ({
+    type: "SET_NEW_POST",
+    payload: isNew,
+});
