@@ -10,7 +10,7 @@ export interface Props {
 }
 
 const BlogControlAreaComponent: React.FC<Props> = (props) => {
-    const filterList = ['전체 게시글', '내 게시글', '스크랩 게시글', '특정 작성자'];
+    const filterList = ['전체 게시글', '내 게시글', '스크랩 게시글', '좋아요 게시글', '특정 작성자'];
     const displayMode = ['격자식', '일자식', '일반식'];
     const sortTypes = ['최신순', '좋아요순', '댓글순'];
     const { state, dispatch } = useContext(BlogContext);
