@@ -12,6 +12,7 @@ import GridReplyContentComponent from "./GridReplyContentComponent";
 import styles from "../../../styles/GridPostCard.module.scss";
 import classNames from "classnames";
 import { observer } from "mobx-react-lite";
+import useBlogEventListener from "../../../hooks/useBlogEventListener";
 
 export interface Props {
     blogPost: BlogPost;
@@ -28,6 +29,11 @@ const GridPostCardComponent: React.FC<Props> = observer((props) => {
     const [isReply, setIsReply] = useState(false);
     const cardRef = useRef<HTMLDivElement>(null);
     const [openLeft, setOpenLeft] = useState(false);
+    const { 
+        handleBookmarkChange, 
+        handleHeartChange, 
+        handleDelete 
+    } = useBlogEventListener(blogPost);
 
     useEffect(() => {
         if (cardRef.current) {
@@ -41,72 +47,6 @@ const GridPostCardComponent: React.FC<Props> = observer((props) => {
             }
         }
     }, [state.data]);
-
-    const handleBookmarkChange = async () => {
-        try {
-            const response = await fetch(`http://localhost:5000/changeBookmark/${userStore.getUserId()}/${blogPost.postId}/${!isBookmark}`, {
-                method: "POST",
-            })
-            if (response.ok) {
-                if (!isBookmark) {
-                    userStore.addBookmark(blogPost.postId);
-                } else {
-                    userStore.deleteBookmark(blogPost.postId);
-                }
-            } else {
-                alert("북마크 실패");
-            }
-        } catch (error) {
-            console.log("북마크 클릭 중 에러: ", error);
-            alert("북마크 클릭 중 오류가 발생했습니다.");
-        }
-    };
-
-    const handleHeartChange = async () => {
-        const isIncrease = !isSelectedHeart;
-        try {
-            const response = await fetch(`http://localhost:5000/heart/${isIncrease}/${blogPost.postId}/${userStore.getUserId()}`, {
-                method: "POST",
-            });
-            
-            if (response.ok) {
-                const updatedData = await response.json();
-                dispatch({ type: "SET_DATA", payload: updatedData });
-                if (isIncrease) {
-                    userStore.addHeart(blogPost.postId);
-                } else {
-                    userStore.deleteHeart(blogPost.postId);
-                }
-            } else {
-                alert("좋아요 클릭 실패");
-            }
-        } catch (error) {
-            console.log("좋아요 클릭 중 에러: ", error);
-            alert("좋아요 클릭 중 오류가 발생했습니다.");
-        }
-    };
-
-    const handleDelete = async () => {
-        try {
-            const response = await fetch(`http://localhost:5000/deletePost/${blogPost.postId}`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({})
-            });
-            
-            if (response.ok) {
-                const updatedData = await response.json();
-                dispatch({ type: "SET_DATA", payload: updatedData });
-            } else {
-                alert("게시글 삭제 실패");
-            }
-        } catch (error) {
-            console.log("게시글 삭제 중 오류: ", error);
-            alert("게시글 삭제 중 오류가 발생했습니다.");
-        }
-    };
 
     const handleFoldingChange = () => {
         setIsFolding(!isFolding);
