@@ -34,17 +34,30 @@ const BlogContentAreaComponent: React.FC<Props> = (props) => {
         }
     }, [state.data, state.filter, specific]);
 
+    const sortedData = useMemo(() => {
+        switch (state.sortType) {
+            case "최신순":
+                return [...filterdData].sort((a, b) => b.postId - a.postId);
+            case "좋아요순":
+                return [...filterdData].sort((a, b) => b.hearts - a.hearts);
+            case "댓글순":
+                return [...filterdData].sort((a, b) => b.reply.length - a.reply.length);
+            default:
+                return [...filterdData].sort((a, b) => b.postId - a.postId);
+        }
+    }, [filterdData, state.sortType]);
+
     const renderBlogPosts = useMemo(() => {
         switch (state.display) {
             case "격자식":
-                return filterdData.map((item) => <GridPostCardComponent blogPost={item}/>);
+                return sortedData.map((item) => <GridPostCardComponent blogPost={item}/>);
             case "일자식":
-                return filterdData.map((item) => <OneWayPostCardComponent blogPost={item}/>);
+                return sortedData.map((item) => <OneWayPostCardComponent blogPost={item}/>);
             case "일반식":
             default:
-                return filterdData.map((item) => <GridPostCardComponent blogPost={item}/>);
+                return sortedData.map((item) => <GridPostCardComponent blogPost={item}/>);
         }
-    }, [filterdData, state.display]);
+    }, [sortedData, state.display]);
 
     const displayClass = classNames(styles.blog_content_area, {
         [styles["blog_content_area--grid"]]: !state.newPost && state.display === "격자식",
