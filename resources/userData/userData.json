@@ -1,0 +1,45 @@
+[
+  {
+    "userId": "",
+    "userPassword": "",
+    "userName": "",
+    "userLevel": "viewer",
+    "favorites": [],
+    "bookmark": [],
+    "heart": []
+  },
+  {
+    "userId": "admin",
+    "userPassword": "admin",
+    "userName": "Admin",
+    "userLevel": "admin",
+    "favorites": [
+      "날씨",
+      "블로그"
+    ],
+    "bookmark": [
+      2,
+      4,
+      9,
+      16,
+      15,
+      20,
+      23
+    ],
+    "heart": [
+      4,
+      4,
+      5,
+      3
+    ]
+  },
+  {
+    "userId": "abc",
+    "userPassword": "abc",
+    "userName": "abc",
+    "userLevel": "level1",
+    "favorites": [],
+    "bookmark": [],
+    "heart": []
+  }
+]

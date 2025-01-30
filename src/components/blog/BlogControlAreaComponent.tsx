@@ -42,19 +42,19 @@ const BlogControlAreaComponent: React.FC<Props> = (props) => {
         } else {
             return (
                 <div className="blog_control_area">
-                <div className={styles.container}>
-                    <div className={styles.select_group}>
-                        <SelectBoxComponent list={filterList} className="blog_filter" onChange={(e) => onFilterChange(e)} />
-                        <SelectBoxComponent list={displayMode} className="blog_display" onChange={(e) => onDisplayChange(e)} />
-                        <SelectBoxComponent list={sortTypes} className="blog_sort" onChange={(e) => onSortTypeChange(e)} />
+                    <div className={styles.container}>
+                        <div className={styles.select_group}>
+                            <SelectBoxComponent list={filterList} className="blog_filter" onChange={(e) => onFilterChange(e)} />
+                            <SelectBoxComponent list={displayMode} className="blog_display" onChange={(e) => onDisplayChange(e)} />
+                            <SelectBoxComponent list={sortTypes} className="blog_sort" onChange={(e) => onSortTypeChange(e)} />
+                        </div>
+                        <button className={styles.write_button} onClick={createNewPost}>글쓰기</button>
                     </div>
-                    <button className={styles.write_button} onClick={createNewPost}>글쓰기</button>
-                </div>
-                {state.filter === "특정 작성자" ? renderSpecificAuthor() : <></>}            
+                    {state.filter === "특정 작성자" ? renderSpecificAuthor() : <></>}            
                 </div>
             );
         }
-    }, [state.newPost]);
+    }, [state.newPost, state.filter]);
 
     return (
         <>

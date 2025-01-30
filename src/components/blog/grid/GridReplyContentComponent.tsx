@@ -21,7 +21,7 @@ const GridReplyContentComponent: React.FC<Props> = (props) => {
     const { userStore } = useStore();
 
     const renderReplies = () => {
-        return replies.map((item) => <ReplyComponent reply={item} />);
+        return replies?.map((item) => <ReplyComponent reply={item} />);
     };
 
     const handleRegisterReply = async () => {

@@ -5,8 +5,8 @@ import ImageButtonComponent from "./control/ImageButtonComponent";
 import { observer } from "mobx-react-lite";
 
 const FavoritesComponent: React.FC = () => {
-    const { informationStore } = useStore();
-    const favorites = informationStore.getFavorites();
+    const { informationStore, userStore } = useStore();
+    const favorites = userStore.getFavoriteList();
 
     const movePage = (name: string) => {
         const wholeMenu = informationStore.getWholeMenus();

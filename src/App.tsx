@@ -15,6 +15,11 @@ function App() {
     rootStore = {informationStore, userStore} as RootStore;
   }
 
+  // 앱이 처음 시작할 때, 유저 정보 가져오기
+  useEffect(() => {
+    rootStore?.userStore.fetchUserData("admin");
+  }, []);
+
   // useEffect(() => {
   //   return () => {
   //     rootStore = undefined;
