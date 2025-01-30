@@ -10,7 +10,7 @@ export interface Props {
 }
 
 const BlogControlAreaComponent: React.FC<Props> = (props) => {
-    const filterList = ['전체 게시글', '내 게시글', '스크랩 게시글', '특정 작성자'];
+    const filterList = ['전체 게시글', '내 게시글', '스크랩 게시글', '좋아요 게시글', '특정 작성자'];
     const displayMode = ['격자식', '일자식', '일반식'];
     const sortTypes = ['최신순', '좋아요순', '댓글순'];
     const { state, dispatch } = useContext(BlogContext);
@@ -42,19 +42,19 @@ const BlogControlAreaComponent: React.FC<Props> = (props) => {
         } else {
             return (
                 <div className="blog_control_area">
-                <div className={styles.container}>
-                    <div className={styles.select_group}>
-                        <SelectBoxComponent list={filterList} className="blog_filter" onChange={(e) => onFilterChange(e)} />
-                        <SelectBoxComponent list={displayMode} className="blog_display" onChange={(e) => onDisplayChange(e)} />
-                        <SelectBoxComponent list={sortTypes} className="blog_sort" onChange={(e) => onSortTypeChange(e)} />
+                    <div className={styles.container}>
+                        <div className={styles.select_group}>
+                            <SelectBoxComponent list={filterList} className="blog_filter" onChange={(e) => onFilterChange(e)} />
+                            <SelectBoxComponent list={displayMode} className="blog_display" onChange={(e) => onDisplayChange(e)} />
+                            <SelectBoxComponent list={sortTypes} className="blog_sort" onChange={(e) => onSortTypeChange(e)} />
+                        </div>
+                        <button className={styles.write_button} onClick={createNewPost}>글쓰기</button>
                     </div>
-                    <button className={styles.write_button} onClick={createNewPost}>글쓰기</button>
-                </div>
-                {state.filter === "특정 작성자" ? renderSpecificAuthor() : <></>}            
+                    {state.filter === "특정 작성자" ? renderSpecificAuthor() : <></>}            
                 </div>
             );
         }
-    }, [state.newPost]);
+    }, [state.newPost, state.filter]);
 
     return (
         <>

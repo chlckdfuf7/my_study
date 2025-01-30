@@ -6,7 +6,6 @@
     "img": "ive1.jpg",
     "hearts": 5,
     "contents": "아이브입니다",
-    "bookmark": false,
     "reply": [
       {
         "author": "B",
@@ -24,7 +23,8 @@
         "author": "A",
         "content": "ㄹㄹㄹㄹ"
       }
-    ]
+    ],
+    "heart": -1
   },
   {
     "postId": 2,
@@ -33,7 +33,6 @@
     "img": "ive2.png",
     "hearts": 7,
     "contents": "아이브네요",
-    "bookmark": false,
     "reply": [
       {
         "author": "C",
@@ -47,7 +46,8 @@
         "author": "D",
         "content": "이열"
       }
-    ]
+    ],
+    "heart": -1
   },
   {
     "postId": 3,
@@ -56,7 +56,6 @@
     "img": "yujin1.jpg",
     "hearts": 53,
     "contents": "안유진입니다",
-    "bookmark": false,
     "reply": [
       {
         "author": "D",
@@ -70,7 +69,8 @@
         "author": "C",
         "content": "와"
       }
-    ]
+    ],
+    "heart": 4
   },
   {
     "postId": 4,
@@ -79,7 +79,6 @@
     "img": "yujin2.jpg",
     "hearts": 61,
     "contents": "유진이입니다",
-    "bookmark": false,
     "reply": [
       {
         "author": "B",
@@ -97,7 +96,8 @@
         "author": "A",
         "content": "ㅁㅇㄻㄴㅇㄹ"
       }
-    ]
+    ],
+    "heart": 2
   },
   {
     "postId": 5,
@@ -106,7 +106,6 @@
     "img": "wonyoung.jpg",
     "hearts": 8,
     "contents": "장원영입니다",
-    "bookmark": false,
     "reply": [
       {
         "author": "B",
@@ -120,7 +119,8 @@
         "author": "D",
         "content": "우와3"
       }
-    ]
+    ],
+    "heart": null
   },
   {
     "postId": 6,
@@ -129,7 +129,6 @@
     "img": "dog1.png",
     "hearts": 32,
     "contents": "리트리버에요",
-    "bookmark": false,
     "reply": [
       {
         "author": "A",
@@ -152,7 +151,6 @@
     "img": "dog2.jpg",
     "hearts": 47,
     "contents": "솜뭉치네요",
-    "bookmark": false,
     "reply": [
       {
         "author": "C",
@@ -175,7 +173,6 @@
     "img": "dog3.jpg",
     "hearts": 49,
     "contents": "말티즈입니다.",
-    "bookmark": false,
     "reply": [
       {
         "author": "D",
@@ -198,7 +195,6 @@
     "img": "dog4.jpg",
     "hearts": 22,
     "contents": "비글이요",
-    "bookmark": false,
     "reply": [
       {
         "author": "A",
@@ -221,7 +217,6 @@
     "img": "dog5.jpg",
     "hearts": 31,
     "contents": "말라뮤트입니다",
-    "bookmark": false,
     "reply": [
       {
         "author": "A",
@@ -244,7 +239,6 @@
     "img": "cat1.jpg",
     "hearts": 25,
     "contents": "고양이1이에요",
-    "bookmark": false,
     "reply": [
       {
         "author": "B",
@@ -267,7 +261,6 @@
     "img": "cat2.jpg",
     "hearts": 9,
     "contents": "고양이2에요",
-    "bookmark": false,
     "reply": [
       {
         "author": "A",
@@ -290,7 +283,6 @@
     "img": "cat3.jpg",
     "hearts": 13,
     "contents": "고양이3입니다",
-    "bookmark": false,
     "reply": [
       {
         "author": "D",
@@ -313,7 +305,6 @@
     "img": "cat4.jpg",
     "hearts": 6,
     "contents": "고양이4입니다",
-    "bookmark": false,
     "reply": [
       {
         "author": "B",
@@ -336,7 +327,6 @@
     "img": "cat5.png",
     "hearts": 8,
     "contents": "고양이5입니다",
-    "bookmark": false,
     "reply": [
       {
         "author": "B",
@@ -359,7 +349,6 @@
     "img": "kimchi.jpg",
     "hearts": 37,
     "contents": "김치찌개에요",
-    "bookmark": false,
     "reply": [
       {
         "author": "A",
@@ -382,7 +371,6 @@
     "img": "food2.jpg",
     "hearts": 47,
     "contents": "된장찌개입니다",
-    "bookmark": false,
     "reply": [
       {
         "author": "C",
@@ -405,7 +393,6 @@
     "img": "food3.jpg",
     "hearts": 75,
     "contents": "삼겹살파티.",
-    "bookmark": false,
     "reply": [
       {
         "author": "B",
@@ -428,7 +415,6 @@
     "img": "food4.jpg",
     "hearts": 79,
     "contents": "토마호크요",
-    "bookmark": false,
     "reply": [
       {
         "author": "A",
@@ -451,7 +437,6 @@
     "img": "food5.jpg",
     "hearts": 34,
     "contents": "우대갈비입니다",
-    "bookmark": false,
     "reply": [
       {
         "author": "A",
@@ -474,7 +459,6 @@
     "img": "20221111_143120.jpg",
     "hearts": 0,
     "contents": "ㅓㅛㄷ서쇼ㅁㄴㅁ",
-    "bookmark": false,
     "reply": []
   },
   {
@@ -484,7 +468,6 @@
     "img": "20221112_053555.jpg",
     "hearts": 0,
     "contents": "ㅎㄱㄷㅎㅁㄷㄱㅎㅂㄱㄷ",
-    "bookmark": false,
     "reply": []
   },
   {
@@ -494,12 +477,21 @@
     "img": "KakaoTalk_20221202_134729123_10.jpg",
     "hearts": 0,
     "contents": "grqrgqer",
-    "bookmark": false,
     "reply": [
       {
         "author": "A",
         "content": "grgrqer"
       }
     ]
+  },
+  {
+    "postId": 24,
+    "author": "Admin",
+    "title": "fefae",
+    "img": "KakaoTalk_20221202_134729123_16.jpg",
+    "hearts": 0,
+    "contents": "grgrgwerg",
+    "bookmark": false,
+    "reply": []
   }
 ]

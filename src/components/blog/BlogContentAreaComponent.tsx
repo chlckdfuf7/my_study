@@ -23,13 +23,15 @@ const BlogContentAreaComponent: React.FC<Props> = (props) => {
             case "내 게시글":
                 return state.data.filter((item) => (item.author === myName));
             case "스크랩 게시글":
-                return state.data.filter((item) => (item.bookmark));
+                return state.data.filter((item) => userStore.getBookmarkList().includes(item.postId));
+            case "좋아요 게시글":
+                return state.data.filter((item) => userStore.getHeartList().includes(item.postId));
             case "특정 작성자":
                 return state.data.filter((item) => (item.author === specific));
             default:
                 return state.data;
         }
-    }, [state.data, state.filter]);
+    }, [state.data, state.filter, specific]);
 
     const renderBlogPosts = useMemo(() => {
         // 현재는 격자식만 구현했지만 추후에는 수정 필요.

@@ -6,8 +6,8 @@ import MultiSelectListBoxComponent from "../control/MultiSelectListBoxComponent"
 import styles from "../../styles/AddFavoriteDialogComponent.module.scss";
 
 const AddFavoriteDialogComponent: React.FC<{ onClose: () => void }> = ({ onClose }) => {
-    const { informationStore } = useStore();
-    const favorites = informationStore.getFavorites();
+    const { informationStore, userStore } = useStore();
+    const favorites = userStore.getFavoriteList();
     const wholeMenu = informationStore.getWholeMenus();
     const [addItems, setAddItems] = useState<string[]>([]);
     const [deleteItems, setDeleteItems] = useState<string[]>([]);
@@ -28,17 +28,41 @@ const AddFavoriteDialogComponent: React.FC<{ onClose: () => void }> = ({ onClose
         );
     }, [favorites]);
 
+    const updateFavoriteData = async () => {
+        try {
+            const userId = userStore.getUserId();
+            const response = await fetch(`http://localhost:5000/updateNavigate/${userId}`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(userStore.getFavoriteList())
+            });
+
+            if (response.ok) {
+                console.log("업데이트 성공");
+            } else {
+                console.error("업데이트 실패");
+            }
+        } catch (error) {
+            console.log("즐겨찾기 업데이트 중 오류: ", error);
+            alert("즐겨찾기 업데이트 중 오류가 발생했습니다.");
+        }
+    }
+
     const addFavorite = () => {
         addItems.forEach(item => {
             if (!favorites.includes(item)) {
-                informationStore.addFavorites(item);
+                userStore.addFavorite(item);
             }
         });
+        updateFavoriteData();
         setAddItems([]);
     };
 
     const removeFavorite = () => {
-        informationStore.deleteFavorites(deleteItems);
+        userStore.deleteFavorites(deleteItems);
+        updateFavoriteData();
         setDeleteItems([]);
         console.log("제거하기");
     };
