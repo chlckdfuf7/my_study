@@ -69,7 +69,9 @@ const useBlogEventListener = (blogPost: BlogPost) => {
             
             if (response.ok) {
                 const updatedData = await response.json();
-                dispatch({ type: "SET_DATA", payload: updatedData });
+                setTimeout(() => {
+                    dispatch({ type: "SET_DATA", payload: updatedData });
+                }, 0);
             } else {
                 alert("게시글 삭제 실패");
             }
@@ -95,14 +97,16 @@ const useBlogEventListener = (blogPost: BlogPost) => {
                 // 서버에서 업데이트된 댓글 리스트를 가져옴
                 const updatedPost = await response.json();
     
-                // 상태 업데이트
-                const updateData = state.data.map((item) =>
-                    item.postId === updatedPost.postId ? updatedPost : item
-                );
-                dispatch({ type: "SET_DATA", payload: updateData });
-    
-                // 댓글 입력란 초기화
-                setComment("");
+                setTimeout(() => {
+                    // 상태 업데이트
+                    const updateData = state.data.map((item) =>
+                        item.postId === updatedPost.postId ? updatedPost : item
+                    );
+                    dispatch({ type: "SET_DATA", payload: updateData });
+        
+                    // 댓글 입력란 초기화
+                    setComment("");
+                }, 0);
             } else {
                 alert("댓글 등록에 실패했습니다.");
             }
@@ -110,11 +114,11 @@ const useBlogEventListener = (blogPost: BlogPost) => {
             console.error("댓글 등록 중 오류:", error);
             alert("댓글 등록 중 오류가 발생했습니다.");
         }
-    }, [blogPost.postId, userStore.getUserName(), dispatch, state.data]);
+    }, [blogPost.postId, userStore.getUserName(), dispatch, state.data, comment]);
 
-    const handleReplyInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleReplyInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setComment(e.target.value);
-    }, []);
+    };
 
     const handleReplyInputKeyDown = useCallback((e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === "Enter") {
