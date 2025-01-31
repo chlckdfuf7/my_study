@@ -6,10 +6,12 @@ import { BlogContext } from "../../../context/BlogContext";
 export interface Props {
     isSelected: boolean;
     handleHeartChange: () => void;
+    width?: number;
+    height?: number;
 }
 
 const HeartComponent: React.FC<Props> = (props) => {
-    const { isSelected, handleHeartChange } = props;
+    const { isSelected, handleHeartChange, width, height } = props;
     const imgUrl = isSelected ? '/resources/selectedHeart.png' : '/resources/heart.png';
     const { state } = useContext(BlogContext);
 
@@ -21,7 +23,7 @@ const HeartComponent: React.FC<Props> = (props) => {
 
     return (
         <div className={heartClass}>
-            <ImageButtonComponent imageUrl={imgUrl} onClick={handleHeartChange} altText="좋아요" width={15} height={15} />
+            <ImageButtonComponent imageUrl={imgUrl} onClick={handleHeartChange} altText="좋아요" width={width ?? 15} height={height ?? 15} />
         </div>
     );
 };

@@ -25,3 +25,13 @@ export const setNewPost = (isNew: boolean): BlogAction => ({
     type: "SET_NEW_POST",
     payload: isNew,
 });
+
+export const setPostNum = (num: number): BlogAction => ({
+    type: "SET_POST_NUM",
+    payload: num,
+});
+
+export const setNormalPost = (id: number): BlogAction => ({
+    type: "SET_NORMAL_POST",
+    payload: id,
+});

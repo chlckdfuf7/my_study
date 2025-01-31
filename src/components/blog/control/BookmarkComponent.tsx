@@ -6,10 +6,12 @@ import { BlogContext } from "../../../context/BlogContext";
 export interface Props {
     isSelected: boolean;
     handleBookmarkChange: () => void;
+    width?: number;
+    height?: number;
 }
 
 const BookmarkComponent: React.FC<Props> = (props) => {
-    const { isSelected, handleBookmarkChange } = props;
+    const { isSelected, handleBookmarkChange, width, height } = props;
     const { state } = useContext(BlogContext);
     const imgUrl = isSelected ? '/resources/selectedbookmark.png' : '/resources/bookmark.png';
 
@@ -21,7 +23,7 @@ const BookmarkComponent: React.FC<Props> = (props) => {
     
     return (
         <div className={bookmarkClass}>
-            <ImageButtonComponent imageUrl={imgUrl} onClick={handleBookmarkChange} altText="책갈피" width={15} height={15} />
+            <ImageButtonComponent imageUrl={imgUrl} onClick={handleBookmarkChange} altText="책갈피" width={width ?? 15} height={height ?? 15} />
         </div>
     );
 }
