@@ -5,11 +5,13 @@ import { BlogContext } from "../../../context/BlogContext";
 
 export interface Props {
     handleDelete: () => void;
+    width?: number;
+    height?: number;
 }
 
 const DeletePostComponent: React.FC<Props> = (props) => {
     const imgUrl = "/resources/delete.png";
-    const { handleDelete } = props;
+    const { handleDelete, width, height } = props;
     const { state } = useContext(BlogContext);
 
     const deleteClass = 
@@ -20,7 +22,7 @@ const DeletePostComponent: React.FC<Props> = (props) => {
 
     return (
         <div className={deleteClass}>
-            <ImageButtonComponent imageUrl={imgUrl} onClick={handleDelete} altText="삭제" width={15} height={15} />
+            <ImageButtonComponent imageUrl={imgUrl} onClick={handleDelete} altText="삭제" width={width ?? 15} height={height ?? 15} />
         </div>
     );
 };

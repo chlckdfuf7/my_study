@@ -6,6 +6,8 @@ export const initialState: BlogState = {
     sortType: "최신순",
     data: [],
     newPost: false,
+    postNum: 5,
+    normalPost: -1,
 };
 
 export const blogReducer = (state: BlogState, action: BlogAction): BlogState => {
@@ -19,7 +21,11 @@ export const blogReducer = (state: BlogState, action: BlogAction): BlogState => 
         case "SET_DATA":
             return { ...state, data: action.payload };
         case "SET_NEW_POST":
-            return { ...state, newPost: action.payload};
+            return { ...state, newPost: action.payload };
+        case "SET_POST_NUM":
+            return { ...state, postNum: action.payload };
+        case "SET_NORMAL_POST":
+            return { ...state, normalPost: action.payload };
         default:
             return state;
     }

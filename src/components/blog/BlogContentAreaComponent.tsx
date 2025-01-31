@@ -6,6 +6,8 @@ import styles from "../../styles/BlogContentArea.module.scss";
 import classNames from "classnames";
 import BlogNewPostPageComponent from "./BlogNewPostPageComponent";
 import OneWayPostCardComponent from "./oneWay/OneWayPostCardComponent";
+import NormalPostListComponent from "./normal/NormalPostListComponent";
+import NormalPostComponent from "./normal/NormalPostComponent";
 
 export interface Props {
     specific: string;
@@ -54,6 +56,7 @@ const BlogContentAreaComponent: React.FC<Props> = (props) => {
             case "일자식":
                 return sortedData.map((item) => <OneWayPostCardComponent blogPost={item}/>);
             case "일반식":
+                return <NormalPostListComponent blogPosts={sortedData} />
             default:
                 return sortedData.map((item) => <GridPostCardComponent blogPost={item}/>);
         }
@@ -70,7 +73,9 @@ const BlogContentAreaComponent: React.FC<Props> = (props) => {
         <div className={displayClass}>
             {state.newPost ? 
                 <BlogNewPostPageComponent /> :
-                renderBlogPosts
+                state.normalPost !== -1 ? 
+                    <NormalPostComponent blogPost={sortedData.find((item) => item.postId === state.normalPost)} /> :
+                    renderBlogPosts
             }
         </div>
     );

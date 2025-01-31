@@ -20,7 +20,7 @@ export interface Props {
 
 const GridPostCardComponent: React.FC<Props> = observer((props) => {
     const { blogPost } = props;
-    const { state, dispatch } = useContext(BlogContext);
+    const { state } = useContext(BlogContext);
     const { userStore } = useStore();
     const isSelectedHeart = userStore.getHeartList().includes(blogPost.postId);
     const isBookmark = userStore.getBookmarkList().includes(blogPost.postId);
