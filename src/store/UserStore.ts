@@ -20,13 +20,13 @@ class UserStore {
     @observable
     private userLevel : UserLevel;
 
-    @observable.shallow
+    @observable
     private heartList: number[];
 
-    @observable.shallow
+    @observable
     private bookmarkList: number[];
 
-    @observable.shallow
+    @observable
     private favoriteList: string[];
 
     constructor() {
@@ -81,14 +81,16 @@ class UserStore {
 
     @boundMethod
     public addHeart(postid: number): void {
-        this.heartList.push(postid);
+        runInAction(() => this.heartList.push(postid));
     }
 
     @boundMethod
     public deleteHeart(postid: number): void {
-        const idx = this.heartList.indexOf(postid);
-        if (idx !== -1)
-            this.heartList.splice(idx, 1);
+        runInAction(() => {
+            const idx = this.heartList.indexOf(postid);
+            if (idx !== -1)
+                this.heartList.splice(idx, 1);
+        });
     }
 
     @boundMethod
@@ -98,14 +100,16 @@ class UserStore {
 
     @boundMethod
     public addBookmark(postId: number) {
-        this.bookmarkList.push(postId);
+        runInAction(() => this.bookmarkList.push(postId));
     }
 
     @boundMethod
     public deleteBookmark(postId: number) {
-        const idx = this.bookmarkList.indexOf(postId);
-        if (idx !== -1)
-            this.bookmarkList.splice(idx, 1);
+        runInAction(() => {
+            const idx = this.bookmarkList.indexOf(postId);
+            if (idx !== -1)
+                this.bookmarkList.splice(idx, 1);
+        });
     }
 
     @boundMethod
@@ -115,21 +119,25 @@ class UserStore {
 
     @boundMethod
     public addFavorite(menu: string) {
-        this.favoriteList.push(menu);
+        runInAction(() => this.favoriteList.push(menu));
     }
 
     @boundMethod
     public deleteFavorite(menu: string) {
-        const idx = this.favoriteList.indexOf(menu);
-        if (idx !== -1)
-            this.favoriteList.splice(idx, 1);
+        runInAction(() => {
+            const idx = this.favoriteList.indexOf(menu);
+            if (idx !== -1)
+                this.favoriteList.splice(idx, 1);
+        });
     }
 
     @boundMethod
     public deleteFavorites(items: string[]): void {
-        const len = items.length;
-        const deleteLookUp = len > 10 ? new Set(items) : items;
-        this.favoriteList = this.favoriteList.filter(item => len > 10 ? !(deleteLookUp as Set<string>).has(item) : !(deleteLookUp as string[]).includes(item));
+        runInAction(() => {
+            const len = items.length;
+            const deleteLookUp = len > 10 ? new Set(items) : items;
+            this.favoriteList = this.favoriteList.filter(item => len > 10 ? !(deleteLookUp as Set<string>).has(item) : !(deleteLookUp as string[]).includes(item));
+        });
     }
 }
 

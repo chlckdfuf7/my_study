@@ -133,7 +133,7 @@ app.get("/userInfo/:userId", (req: Request, res: Response) => {
 // 게시글 삭제 
 app.post("/deletePost/:postId", (req: Request, res: Response) => {
     try {
-        const postId = req.params.postId;
+        const postId = parseInt(req.params.postId);
         const users = readDataFile("user");
         users.map((user) => {
             if (user.heart.includes(postId)) {
@@ -146,12 +146,14 @@ app.post("/deletePost/:postId", (req: Request, res: Response) => {
         writeDataFile(users, "user");
 
         const posts = readDataFile();
-        const deletePost = posts.find(post => post.postId === postId);
-        if (deletePost) {
-            posts.splice(deletePost, 1);
+        const deletePostIndex = posts.findIndex(post => post.postId === postId);
+        if (deletePostIndex !== -1) {
+            posts.splice(deletePostIndex, 1);
+            writeDataFile(posts);
+            res.status(201).json(posts);
+        } else {
+            res.status(404).send("게시글을 찾을 수 없습니다.");
         }
-        writeDataFile(posts);
-        res.status(201).json(posts);
     } catch (error) {
         console.log("게시글 삭제 업데이트 중 오류: ", error);
         res.status(500).send("게시글 삭제 업데이트 실패");
