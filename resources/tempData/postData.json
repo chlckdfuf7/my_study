@@ -493,5 +493,25 @@
     "contents": "grgrgwerg",
     "bookmark": false,
     "reply": []
+  },
+  {
+    "postId": 25,
+    "author": "Admin",
+    "title": "ㄱㄷㅈㄷㅈㄷㄱ",
+    "img": "20221111_140139.jpg",
+    "hearts": 0,
+    "contents": "ㅎㄱㅎㅂㄷㄱ",
+    "bookmark": false,
+    "reply": []
+  },
+  {
+    "postId": 26,
+    "author": "Admin",
+    "title": "ㅜ훟ㄴ훊",
+    "img": "20221111_144907.jpg",
+    "hearts": 0,
+    "contents": "123123",
+    "bookmark": false,
+    "reply": []
   }
 ]

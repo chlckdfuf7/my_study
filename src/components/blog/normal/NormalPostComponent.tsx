@@ -45,7 +45,7 @@ const NormalPostComponent: React.FC<Props> = (props) => {
                         <img className={styles.img} src={`http://localhost:5000/resources/blogPost/${blogPost.img}`} alt={`${blogPost.img}`} />
                     </div>
                     <div className={styles.content}>{blogPost.contents}</div>
-                    <div className={styles.control_container}>
+                    <div className={styles.post_control_container}>
                         <HeartComponent isSelected={isSelectedHeart} handleHeartChange={handleHeartChange} width={20} height={20} />
                         <BookmarkComponent isSelected={isSelectedBookmark} handleBookmarkChange={handleBookmarkChange} width={20} height={20} />
                         {isMine ? <DeletePostComponent handleDelete={handleDelete} width={20} height={20} /> : <></>}

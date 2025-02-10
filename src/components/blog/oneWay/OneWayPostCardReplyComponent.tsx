@@ -27,8 +27,8 @@ const OneWayPostCardReplyComponent: React.FC<Props> = (props) => {
             <div className={styles["postCard__replyArea__replies"]}>
                 {renderReplies()}
             </div>
-            <div>
-                <input className={styles["postCard__replyArea__input"]} type="text" onChange={handleReplyInputChange} onKeyDown={handleReplyInputKeyDown} placeholder="댓글을 입력해 주세요." value={comment}/>
+            <div className={styles["postCard__replyArea__replyInputContainer"]}>
+                <input type="text" onChange={handleReplyInputChange} onKeyDown={handleReplyInputKeyDown} placeholder="댓글을 입력해 주세요." value={comment}/>
                 <ImageButtonComponent imageUrl={imgUrl} onClick={handleRegisterReply} altText="달기" width={15} height={15} />
             </div>
         </>
