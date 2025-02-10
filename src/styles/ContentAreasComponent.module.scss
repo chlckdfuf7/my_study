@@ -1,4 +1,8 @@
 .ContentArea {
-    min-height: 850px;
+    margin-top: 60px;
+    margin-bottom: 50px;
+    overflow-y: auto;
+    flex-grow: 1;
+    padding: 20px;
     border: 1px solid blue;
 }

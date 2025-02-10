@@ -52,13 +52,13 @@ const BlogContentAreaComponent: React.FC<Props> = (props) => {
     const renderBlogPosts = useMemo(() => {
         switch (state.display) {
             case "격자식":
-                return sortedData.map((item) => <GridPostCardComponent blogPost={item}/>);
+                return sortedData.map((item) => <GridPostCardComponent key={item.postId} blogPost={item}/>);
             case "일자식":
-                return sortedData.map((item) => <OneWayPostCardComponent blogPost={item}/>);
+                return sortedData.map((item) => <OneWayPostCardComponent key={item.postId} blogPost={item}/>);
             case "일반식":
                 return <NormalPostListComponent blogPosts={sortedData} />
             default:
-                return sortedData.map((item) => <GridPostCardComponent blogPost={item}/>);
+                return sortedData.map((item) => <GridPostCardComponent key={item.postId} blogPost={item}/>);
         }
     }, [sortedData, state.display]);
 

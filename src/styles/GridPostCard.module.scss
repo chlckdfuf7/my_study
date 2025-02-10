@@ -2,11 +2,15 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    width: 260px;
-    height: 250px;
+    flex: 1 1 260px; /* 최소 260px을 유지하면서 자동 크기 조정 */
+    width: 100%; /* 부모 크기에 맞춰 조정 */
+    max-width: 100%;
+    min-width: 260px;
+    height: auto; /* 높이 자동 조정 */
     padding: 20px;
     background-color: lightgray;
     margin-bottom: 20px;
+    box-sizing: border-box;
     
     &__imgBox {
         width: auto;
